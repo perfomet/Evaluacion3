@@ -6,13 +6,13 @@
  * and open the template in the editor.
  */
 include_once __DIR__."/GenericDAO.php";
-include_once __DIR__."/../model/CargaLegal.php";
+include_once __DIR__."/../model/Atencion.php";
 /**
- * Description of CargaLegalDAO
+ * Description of AtencionDAO
  *
  * @author david
  */
-class CargaLegalDAO implements GenericDAO {
+class AtencionDAO implements GenericDAO {
     //put your code here
     public function actualizar($registro) {
         

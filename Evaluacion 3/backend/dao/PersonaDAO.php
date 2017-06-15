@@ -25,39 +25,9 @@ class PersonaDAO implements GenericDAO {
 
     //put your code here
     public function actualizar($registro) {
-        $query = "UPDATE persona SET PERSONA_ID=:rut, PERSONA_NOMBRE=:nombre,PERSONA_APELLIDO=:apellido,PERSONA_FECHA_NACIMIENTO=:fecha_nacimiento";
-        
-        $sentencia = $this->conexion->prepare($query);
-        
-        $rut = $registro->getId();
-        $nombre = $registro->getNombre();
-        $apellido = $registro->getApellido();
-        $fechaNacimiento = $registro->getFechaNacimiento();
-        
-        $sentencia->bindParam(':rut', $rut);
-        $sentencia->bindParam(':nombre', $nombre);
-        $sentencia->bindParam(':apellido', $apellido);
-        $sentencia->bindParam(':fecha_nacimiento', $fechaNacimiento);       
-              
-        return $sentencia->execute();
     }
 
     public function agregar($registro) {
-        $query = "INSERT INTO persona (PERSONA_ID,PERSONA_NOMBRE,PERSONA_APELLIDO,PERSONA_FECHA_NACIMIENTO) VALUES (:rut, :nombre, :apellido, :fecha_nacimiento) ";
-        
-        $sentencia = $this->conexion->prepare($query);
-        
-        $rut = $registro->getId();
-        $nombre = $registro->getNombre();
-        $apellido = $registro->getApellido();
-        $fechaNacimiento = $registro->getFechaNacimiento();
-        
-        $sentencia->bindParam(':rut', $rut);
-        $sentencia->bindParam(':nombre', $nombre);
-        $sentencia->bindParam(':apellido', $apellido);
-        $sentencia->bindParam(':fecha_nacimiento', $fechaNacimiento);       
-              
-        return $sentencia->execute();
     }
 
     public function buscarPorId($idRegistro) {
@@ -78,7 +48,6 @@ class PersonaDAO implements GenericDAO {
     }
 
     public function eliminar($idRegistro) {
-        return $this->conexion->query("DELETE FROM persona WHERE PERSONA_ID=".$idRegistro);
     }
 
     public function listarTodos() {
