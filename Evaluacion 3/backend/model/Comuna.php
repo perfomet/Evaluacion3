@@ -12,5 +12,34 @@
  * @author david
  */
 class Comuna {
-    //put your code here
+    private $id, $nombre, $provincia;
+    
+    function __construct() {
+        
+    }
+    
+    function getId() {
+        return $this->id;
+    }
+
+    function getNombre() {
+        return $this->nombre;
+    }
+
+    function getProvincia() {
+        return $this->provincia;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    function setProvincia($provincia) {
+        $this->provincia = $provincia;
+    }
+
 }

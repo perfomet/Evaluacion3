@@ -12,5 +12,28 @@
  * @author david
  */
 class CargaLegal {
-    //put your code here
+    private $persona, $beneficiarioId;
+    
+    function __construct() {
+        
+    }
+    
+    function getTitularId() {
+        return $this->persona;
+    }
+
+    function getBeneficiarioId() {
+        return $this->beneficiarioId;
+    }
+
+    function setTitularId($titularId) {
+        $this->persona = $titularId;
+    }
+
+    function setBeneficiarioId($beneficiarioId) {
+        $this->beneficiarioId = $beneficiarioId;
+    }
+
+
+
 }

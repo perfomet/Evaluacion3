@@ -12,5 +12,34 @@
  * @author david
  */
 class Provincia {
-    //put your code here
+    private $id, $nombre, $region;
+    
+    function __construct() {
+        
+    }
+    
+    function getId() {
+        return $this->id;
+    }
+
+    function getNombre() {
+        return $this->nombre;
+    }
+
+    function getRegion() {
+        return $this->region;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    function setRegion($region) {
+        $this->region = $region;
+    }
+
 }

@@ -12,5 +12,33 @@
  * @author david
  */
 class Region {
-    //put your code here
+    private $id, $nombre, $iso31662CL;
+    
+    function __construct() {
+        
+    }
+    
+    function getId() {
+        return $this->id;
+    }
+
+    function getNombre() {
+        return $this->nombre;
+    }
+
+    function getIso31662CL() {
+        return $this->iso31662CL;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    function setIso31662CL($iso31662CL) {
+        $this->iso31662CL = $iso31662CL;
+    }
 }
