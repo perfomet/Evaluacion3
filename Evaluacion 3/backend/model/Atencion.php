@@ -12,42 +12,82 @@
  * @author david
  */
 class Atencion {
-    private $id, $beneficiarion, $fechaAtencion, $comuna;
+    private $id, $beneficiario, $fechaAtencion, $comuna;
     
     function __construct() {
         
     }
     
+    /**
+     * 
+     * @return int
+     */
     function getId() {
         return $this->id;
     }
-
-    function getBeneficiarion() {
-        return $this->beneficiarion;
+    
+    /**
+     * 
+     * @return Persona
+     */
+    function getBeneficiario() {
+        return $this->beneficiario;
     }
-
+    
+    /**
+     * 
+     * @return DateTime
+     */
     function getFechaAtencion() {
         return $this->fechaAtencion;
     }
-
+    
+    /**
+     * 
+     * @return Comuna
+     */
     function getComuna() {
         return $this->comuna;
     }
-
+    
+    /**
+     * 
+     * @param int $id
+     */
     function setId($id) {
+        /*@var $id int */
         $this->id = $id;
     }
-
-    function setBeneficiarion($beneficiarion) {
-        $this->beneficiarion = $beneficiarion;
+    
+    /**
+     * 
+     * @param Persona $beneficiario
+     */
+    function setBeneficiario($beneficiario) {
+        /*@var $beneficiario Persona */
+        $this->beneficiario = $beneficiario;
     }
-
+    
+    /**
+     * 
+     * @param DateTime $fechaAtencion
+     */
     function setFechaAtencion($fechaAtencion) {
+        /*@var $fechaAtencion DateTime */
         $this->fechaAtencion = $fechaAtencion;
     }
 
+    /**
+     * 
+     * @param Comuna $comuna
+     */
     function setComuna($comuna) {
+        /*@var $comuna Comuna */
         $this->comuna = $comuna;
+    }
+    
+    public function getPrivate(){
+        return get_object_vars($this);
     }
 
 }

@@ -4,7 +4,20 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 14-jun-2017, 21:27:30
+    Created on : 22-jun-2017, 23:50:04
     Author     : david
 */
 
+#agendarForm{
+    width: 40%!important;
+    margin: 0 auto!important;
+}
+
+#table{
+    width: 90%!important;
+    margin: 0 auto!important;
+}
+
+tr, td, table{
+    border: 0.1px solid!important;
+}

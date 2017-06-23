@@ -15,8 +15,12 @@ class DBConnection {
     const DBNAME = "DAI5501_evaluacion3";
     const PORT = "3306";
     const USER = "root";
-    const PASS = "root";
+    const PASS = "";
 
+    /**
+     * 
+     * @return \PDO
+     */
     public static function getConexion() {
         $dsn = "mysql:host=" . self::HOST . ";dbname=" . self::DBNAME . ";port=" . self::PORT . ";charset=utf8";
 
@@ -41,6 +45,10 @@ class DBConnection {
         }
     }
 
+    /**
+     * 
+     * @return \PDO
+     */
     private static function crearBaseDatos() {
 
         echo '<div class="warning">Base de datos no encontrada, se crear&aacute;...</div>';
@@ -502,7 +510,7 @@ class DBConnection {
     (13, 'Región Metropolitana de Santiago', 'CL-RM'),
     (14, 'Región de Los Ríos', 'CL-LR'),
     (15, 'Arica y Parinacota', 'CL-AP')");
-            
+
             $mysqlConexion->exec("
     CREATE TABLE IF NOT EXISTS `persona` (
       `PERSONA_ID` int(8) NOT NULL,
@@ -511,14 +519,14 @@ class DBConnection {
       `PERSONA_FECHA_NACIMIENTO` DATE DEFAULT NULL,
       PRIMARY KEY (`PERSONA_ID`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
-            
+
             $mysqlConexion->exec("
     CREATE TABLE IF NOT EXISTS `carga_legal` (
       `TITULAR_ID` int(8) NOT NULL,
       `BENEFICIARIO_ID` int(8) NOT NULL,
       PRIMARY KEY (`TITULAR_ID`,`BENEFICIARIO_ID`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
-            
+
             $mysqlConexion->exec("
     CREATE TABLE IF NOT EXISTS `atencion` (
       `ATENCION_ID` int(8) NOT NULL AUTO_INCREMENT,
@@ -535,16 +543,16 @@ class DBConnection {
             $mysqlConexion->exec("
     ALTER TABLE `provincia`
       ADD CONSTRAINT `provincia_ibfk_1` FOREIGN KEY (`PROVINCIA_REGION_ID`) REFERENCES `region` (`REGION_ID`) ON UPDATE CASCADE");
-        
+
             $mysqlConexion->exec("
     ALTER TABLE `carga_legal`
       ADD CONSTRAINT `persona_titukar_fk` FOREIGN KEY (`TITULAR_ID`) REFERENCES `persona` (`PERSONA_ID`) ON UPDATE CASCADE");
-            
+
             $mysqlConexion->exec("
     ALTER TABLE `carga_legal`
       ADD CONSTRAINT `persona_beneficiario_fk` FOREIGN KEY (`BENEFICIARIO_ID`) REFERENCES `persona` (`PERSONA_ID`) ON UPDATE CASCADE");
-    
-            
+
+
             $mysqlConexion->exec("
     INSERT INTO `persona` (`PERSONA_ID`, `PERSONA_NOMBRE`, `PERSONA_APELLIDO`, `PERSONA_FECHA_NACIMIENTO`) VALUES
     (12345678, 'Juan', 'Pérez','1980-04-28'),
@@ -559,8 +567,8 @@ class DBConnection {
     (23321655, 'Jacinta', 'Zamora','2015-12-30'),
     (11123321, 'Patricia', 'Fuentes','1981-12-29'),
     (24123321, 'Alfredo', 'Fuentes','2014-11-26')");
-            
-            
+
+
             $mysqlConexion->exec("
     INSERT INTO `carga_legal` (`TITULAR_ID`, `BENEFICIARIO_ID`) VALUES
     (12345678, 12345678),
@@ -575,9 +583,8 @@ class DBConnection {
     (8123876, 23321655),
     (11123321, 11123321),
     (11123321, 24123321)");
-            
+
             return $mysqlConexion;
-            
         } catch (Exception $e) {
             echo $e->getMessage();
             die($e->getCode());

@@ -13,13 +13,17 @@ include_once __DIR__."/../model/Persona.php";
  * @author david
  */
 class PersonaDAO implements GenericDAO {
+    /**
+     *
+     * @var PDO 
+     */
     private $conexion;
     
     /**
      * 
-     * @param type $conexion
+     * @param PDO $conexion
      */
-    public function _construct($conexion){
+    function __construct($conexion){
         $this->conexion = $conexion;
     }
 
@@ -29,7 +33,12 @@ class PersonaDAO implements GenericDAO {
 
     public function agregar($registro) {
     }
-
+    
+    /**
+     * 
+     * @param type $idRegistro
+     * @return \Persona
+     */
     public function buscarPorId($idRegistro) {
         $persona = new Persona();
         
@@ -44,7 +53,7 @@ class PersonaDAO implements GenericDAO {
             }
         }
         
-        return $persona;
+        return $persona->getPrivate();
     }
 
     public function eliminar($idRegistro) {
@@ -63,7 +72,7 @@ class PersonaDAO implements GenericDAO {
                 $persona->setApellido($fila["PERSONA_APELLIDO"]);
                 $persona->setFechaNacimiento($fila["PERSONA_FECHA_NACIMIENTO"]);
 
-                array_push($listado, $persona);
+                array_push($listado, $persona->getPrivate());
             }
         }
         

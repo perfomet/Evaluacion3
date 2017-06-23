@@ -12,28 +12,53 @@
  * @author david
  */
 class CargaLegal {
-    private $persona, $beneficiarioId;
+    /**
+     *
+     * @var Persona 
+     */
+    private $titular;
+    
+    /**
+     *
+     * @var Persona 
+     */
+    private $beneficiario;
     
     function __construct() {
         
     }
     
-    function getTitularId() {
-        return $this->persona;
+    
+    function getTitular() {
+        return $this->titular;
+    }
+    
+    /**
+     * 
+     * @return Persona
+     */
+    function getBeneficiario() {
+        return $this->beneficiario;
+    }
+    
+    /**
+     * 
+     * @param Persona $titular
+     */
+    function setTitular($titular) {
+        $this->titular = $titular;
     }
 
-    function getBeneficiarioId() {
-        return $this->beneficiarioId;
+    /**
+     * 
+     * @param Persona $beneficiario
+     */
+    function setBeneficiario($beneficiario) {
+        $this->beneficiario = $beneficiario;
     }
 
-    function setTitularId($titularId) {
-        $this->persona = $titularId;
+    function getPrivate(){
+        return get_object_vars($this);
     }
-
-    function setBeneficiarioId($beneficiarioId) {
-        $this->beneficiarioId = $beneficiarioId;
-    }
-
-
 
 }

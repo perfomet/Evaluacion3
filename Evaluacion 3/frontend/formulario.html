@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/formulario.js"></script>
+        <link rel="stylesheet" href="css/principal.css" media="all" />
+    </head>
+    <body><br/><br/>
+        <div id="formulario">
+            <fieldset>
+                <legend>Datos del cliente y beneficiario</legend>
+                <input id="rut" name="rut" type="number" placeholder="Rut" required=""/><br/><br/>
+                <input id="nombre" name="nombre" type="text" placeholder="Nombre" required=""/><br/><br/>
+                <input id="apellido" name="apellido" type="text" placeholder="Apellido" required=""/><br/><br/>
+                <select id="beneficiario" name="beneficiario" disabled="">
+                    <option selected disabled value=''>- Beneficiario -</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Zona de atenci&oacute;n</legend>
+                <select id="region" name="region"></select><br/><br/>
+                <select id="provincia" name="provincia" disabled="">
+                    <option selected disabled value=''>- Provincia -</option>
+                </select><br/><br/>
+                <select id="comuna" name="comuna" disabled="">
+                    <option selected disabled value=''>- Comuna -</option>
+                </select><br/><br/>
+                <div id="divFecha">
+                    <span>Fecha atenci&oacute;n&nbsp;</span>
+                    <input id="fecha" name="fecha" type="date" required=""/>
+                </div>
+            </fieldset><br/>
+            <div id="divBotones">
+                <input id="volver" type="button" value="Volver" onclick="window.location = 'index.html'" />
+                <input id="limpiar" type="button" value="Limpiar" />
+                <input id="agendar" type="button" value="Agendar" />
+            </div>
+        </div>
+    </body>
+</html>

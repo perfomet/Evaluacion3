@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14-jun-2017, 21:27:30
+    Author     : david
+*/
+#formulario{
+    width: 50%!important; 
+    margin: 0 auto!important;
+}
+
+#formulario>fieldset{
+    width: 100%!important;
+}
+
+#comuna, #region, #provincia, #rut, #nombre, #apellido, #beneficiario{
+    width: 90%!important; 
+    margin-left: 5%!important;
+}
+
+#fecha{
+    
+}
+
+#divFecha{
+    width: 50%!important;
+    margin-left: 55%!important;
+}
+
+#divBotones{
+    width: 40%!important;
+    margin: 0 auto!important;
+}
+
+#limpiar, #agendar, #volver{
+    width: 30%!important;
+}
+
+#agendar, #limpiar{
+    margin-left: 3%!important;
+}
