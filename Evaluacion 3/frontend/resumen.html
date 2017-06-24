@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/resumen.js"></script>
+        <link rel="stylesheet" href="css/principal.css" media="all" />
+    </head>
+    <body>
+        <div id="formulario"><br/>
+            <fieldset>
+                <legend>Resumen atención agendada</legend><br/>
+                <table id="tablaResumen">
+                    <tr>
+                        <td class="titulo"><b>Beneficiario:<b></td>
+                        <td id="reRut">Rut</td>
+                        <td id="reNombre">Nombre</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="titulo"><b>Comuna de atención:<b></td>
+                        <td id="reComuna"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="titulo"><b>Fecha de atención:<b></td>
+                        <td id="reFecha"></td>
+                        <td></td>
+                    </tr>
+                </table><br/>
+            </fieldset>
+        </div><br/>
+        <div id="divBotones">
+            <input id="volver" type="button" value="Volver" onclick="window.location = 'index.html'" />
+        </div>
+    </body>
+</html>

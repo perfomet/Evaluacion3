@@ -18,6 +18,6 @@ and open the template in the editor.
     margin: 0 auto!important;
 }
 
-tr, td, table{
+#table>tr, #table>td, #table{
     border: 0.1px solid!important;
 }

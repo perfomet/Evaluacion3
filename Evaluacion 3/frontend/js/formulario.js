@@ -131,7 +131,12 @@ function comprobarFecha(fecha){
     }
     
     var actual = new Date();
-    var fech = new Date(partes[2], partes[1]-1, partes[0]);
+    var fech = new Date();
+    if(partes[0].length < 4){
+        fech = new Date(partes[2], partes[1]-1, partes[0]);
+    }else{
+        fech = new Date(partes[0], partes[1]-1, partes[2]);
+    }
     
     if(fech < actual){
         return false;
@@ -176,7 +181,11 @@ function agendar() {
     
     if(comprobarFecha($("#fecha").val())){
         var partes = $("#fecha").val().split("-");
-        fecha = partes[2]+"-"+(partes[1]-1)+"-"+partes[0];
+        if(partes[0].length < 4){
+            fecha = partes[2]+"-"+(partes[1]-1)+"-"+partes[0];
+        }else{
+            fecha = partes[0]+"-"+(partes[1]-1)+"-"+partes[2];
+        }
     }else{
         exito = false;
         alert("No ha ingresado una fecha válida.");
@@ -193,7 +202,7 @@ function agendar() {
                 },
                 function (data) {
                     if(data.respuesta === "exito"){
-                        alert("Consulta agendada exitosamente.");
+                        window.location = "resumen.html?rut="+rut+"&comuna="+comuna+"&fecha="+fecha;
                     }else{
                         alert("Error al agendar la consulta.");
                     }

@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23-jun-2017, 22:06:08
+    Author     : david
+*/
+
+#tablaResumen, #tablaResumen>tr{
+    width: 90%!important;
+    margin: 0 auto!important;
+}
+
+.titulo{
+    width: 40%!important;
+    text-align: left!important;
+}
+
+#reRut, #reComuna, #reFecha{
+    width: 20%!important;
+    text-align: left!important;
+}
+
+#reNombre{
+    width: 40%!important;
+    text-align: left!important;
+}
